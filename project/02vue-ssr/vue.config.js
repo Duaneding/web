@@ -1,5 +1,5 @@
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin');
-const VueSSRClientOlugin = require('vue-server-renderer/client-plugin');
+const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 const nodeExternals = require('webpack-node-externals');
 const merge = require('lodash.merge')
 
@@ -46,7 +46,7 @@ module.exports = {
      * 服务端默认文件名为，vue-ssr-server-bundle.json
      * 客户端默认文件名为，vue-ssr-client-bundle.json
      * **/ 
-    plugins:[TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientOlugin()]
+    plugins:[TARGET_NODE ? new VueSSRServerPlugin() : new VueSSRClientPlugin()]
   }),
   chainWebpack: config => {
     //cli4项目添加

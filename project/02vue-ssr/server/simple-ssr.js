@@ -27,6 +27,7 @@ server.get('*',(req,res) => {
       res.send(html)
     })
     .catch(err => {
+      console.log(err)
       res.status(500)
       res.send('Internal Server Error, 500!')
     })

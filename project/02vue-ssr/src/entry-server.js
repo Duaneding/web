@@ -8,6 +8,8 @@ export default context => {
     router.push(context.url);
     router.onReady(() => {
       const match = router.getMatchedComponents();
+      if(!match.length)return reject({code:404})
+      //遍历匹配到的每一个组件，执行组件内部的asyncData()
       Promise
       .all(
         match.map(Component => {
@@ -17,6 +19,7 @@ export default context => {
         })
       )
       .then(() => {
+        //渲染器会把context.state序列化为字符串存到window.__INITIAL_STATE__，返回到前端激活之前再解析为对象
         context.state = store.state;
         resolve(app)
       })

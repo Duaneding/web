@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <img alt="Vue logo" src="../assets/logo.png" />
     <h2 @click="$store.commit('add')">{{$store.state.count}}</h2>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -15,8 +15,8 @@ export default {
   components: {
     HelloWorld
   },
-  asyncData({store,route}){
-    return store.state.dispatch('getCount')
+  asyncData({store}){
+    return store.dispatch('getCount')
   }
 }
 </script>
