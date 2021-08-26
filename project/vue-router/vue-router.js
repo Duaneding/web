@@ -5,12 +5,30 @@ class VueRouter{
         // 1.解析routes
         this.$routes = routes;
         //current值改变时，render会重新执行
-        Vue.util.defineReactive(this,'current','/');
+        this.current = window.location.hash || '/';
+        Vue.util.defineReactive(this,'matched',[]);
+        this.match()
         // 2.监听hash变化
         window.addEventListener('hashchange',() => {
             this.current = window.location.hash.slice(1)
         })
-        // 3.响应hash变化
+        // 3.响应hash变化,router-view的render完成
+    }
+    match(routes){
+        routes = routes || this.$routes.routes;
+        for(let route of routes){
+            if(route.path === '/' && this.current === '/'){
+                this.matched.push(route)
+                return
+            }
+            if(route.path !== '/' && this.current.indexOf(route.path) != -1){
+                this.matched.push(route)
+                if(route.childen){
+                    this.match(route.childen)
+                }
+                return
+            }
+        }
     }
 }
 
@@ -37,6 +55,17 @@ VueRouter.install = function(_Vue){
     Vue.component('router-view',{
         //render内部用到的值（current）需要是响应式，才能在值发生变化的时候自动重新执行
         render(h){
+            this.$vnode.data.routerView = true;
+            let depth = 0;
+            let parent = this.$parent
+            while(parent){
+                const vnodeData = parent.$vnode && parent.$vnode.data;
+                if(vnodeData && vnodeData.routerView){
+                    depth++
+                }
+                parent = this.$parent;
+            }
+
             let comp = null;
             //找到与current对应的component
             
