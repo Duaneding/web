@@ -5,7 +5,7 @@ function getResult(nums){
         sums[i] = sums[i - 1] + nums[i];
     }
     //遍历前缀和，尝试每一种子序列之和，找到最大值
-    let min = max = sums[0];
+    let pre_min = max = sums[0];
     for(let i = 1;i < sums.length;i++){
         pre_min = Math.min(sums[i - 1],pre_min);
         if(pre_min >= 0)max = Math.max(max,sums[i]);
