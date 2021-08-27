@@ -27,14 +27,7 @@ class Store{
     set state(){
         console.error('不能修改state')
     }
-    get getters(type){
-        const entry = this.getters[type];
-        if(!entry)return console.error('getters中不存在方法：'+type)
-        return entry(state);
-    }
-    set getters(type){
-        console.error('不能修改getters中的属性')
-    }
+    
     commit(type,payload){
         const entry = this.mutations[type];
         if(!entry)return console.error('mutations中不存在方法：'+type)

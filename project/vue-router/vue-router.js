@@ -1,21 +1,22 @@
 let Vue;
-
 class VueRouter{
-    constructor(routes){
+    constructor(options){
         // 1.解析routes
-        this.$routes = routes;
+        this.$options = options;
         //current值改变时，render会重新执行
         this.current = window.location.hash || '/';
         Vue.util.defineReactive(this,'matched',[]);
         this.match()
         // 2.监听hash变化
         window.addEventListener('hashchange',() => {
-            this.current = window.location.hash.slice(1)
+            this.current = window.location.hash.slice(1);
+            this.matched = [];
+            this.match();
         })
         // 3.响应hash变化,router-view的render完成
     }
     match(routes){
-        routes = routes || this.$routes.routes;
+        routes = routes || this.$options.routes;
         for(let route of routes){
             if(route.path === '/' && this.current === '/'){
                 this.matched.push(route)
@@ -69,7 +70,7 @@ VueRouter.install = function(_Vue){
             let comp = null;
             //找到与current对应的component
             
-            const route = this.$router.$routes.find(item => item.path === this.$router.current)
+            const route = this.$router.mathed[depth]
             if(route){
                 comp = route.component
             }

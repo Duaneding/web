@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p>{{count}}</p>
+        <p v-text="count" @click="onclick"></p>
+        <p v-html="desc"></p>
+        <input type="text" v-model="desc">
+    </div>
+    <script src="./reactive.js"></script>
+    <script>
+        const app = new Vue({
+            el:'#app',
+            data:{
+                count:0,
+                desc:"<span>啊哈</span>",
+                arr:[1],
+                text:'0'
+            },
+            methods:{
+                onclick(){
+                    this.count += 10;
+                }
+            }
+        })
+        app.arr.push('jj')
+        setInterval(() => {
+            app.count++
+            
+        },1000)
+    </script>
+</body>
+</html>
