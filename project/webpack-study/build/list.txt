@@ -1,0 +1,15 @@
+打包文件清单：
+font/webfont.woff
+images/baidu.png
+style/first.css
+js/first.js
+style/last.css
+js/last.js
+style/main.css
+js/main.js
+first.html
+last.html
+main.html
+dr.txt
+
+文件数量：12

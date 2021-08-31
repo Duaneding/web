@@ -1,0 +1,17 @@
+{
+    "presets":[
+        [
+            "@babel/preset-env",
+            {
+                "targets":{
+                    "edge":"17"
+                    // browsers: [">1%", "last 2 version"]
+                },
+                "corejs":"3",
+                //按需引入垫片
+                "useBuiltIns":"usage" //usage | entry | false
+            }
+        ],
+        "@babel/preset-react"
+    ]
+}

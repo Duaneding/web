@@ -81,31 +81,55 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/a.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/entry/first/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/a.js":
-/*!******************!*\
-  !*** ./src/a.js ***!
-  \******************/
+/***/ "./src/images/baidu.png":
+/*!******************************!*\
+  !*** ./src/images/baidu.png ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (\"../images/baidu.png\");\n\n//# sourceURL=webpack:///./src/images/baidu.png?");
+
+/***/ }),
+
+/***/ "./src/js/entry/first/b.js":
+/*!*********************************!*\
+  !*** ./src/js/entry/first/b.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("console.log('b');\n\n//# sourceURL=webpack:///./src/js/entry/first/b.js?");
+
+/***/ }),
+
+/***/ "./src/js/entry/first/index.js":
+/*!*************************************!*\
+  !*** ./src/js/entry/first/index.js ***!
+  \*************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b.js */ \"./src/b.js\");\n/* harmony import */ var _b_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_b_js__WEBPACK_IMPORTED_MODULE_0__);\n\r\nconsole.log('heesss');\n\n//# sourceURL=webpack:///./src/a.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./b.js */ \"./src/js/entry/first/b.js\");\n/* harmony import */ var _b_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_b_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _styles_test_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../styles/test.less */ \"./src/styles/test.less\");\n/* harmony import */ var _images_baidu_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../images/baidu.png */ \"./src/images/baidu.png\");\n\r\n// import css from'./styles/hahaha.css'\r\n\r\n// import home from './component/home.vue'\r\n  //file-loader url-loader\r\n// console.log('dingran:dr');\r\n\r\n\r\n// const img = new Image();\r\n// img.src = pic;\r\n\r\n// const app = document.querySelector('#app');\r\n// app.appendChild(img)\n\n//# sourceURL=webpack:///./src/js/entry/first/index.js?");
 
 /***/ }),
 
-/***/ "./src/b.js":
-/*!******************!*\
-  !*** ./src/b.js ***!
-  \******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "./src/styles/test.less":
+/*!******************************!*\
+  !*** ./src/styles/test.less ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log('b');\n\n//# sourceURL=webpack:///./src/b.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/styles/test.less?");
 
 /***/ })
 
